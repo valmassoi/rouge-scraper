@@ -5,7 +5,7 @@ Web scraper that checks Rogue Fitness stock of 35-55lb plates every minute. Thei
 `npm i`
 
 ## Usage
-edit `./items.consts.js` `url`s and `wantedItems` to match the exact product names  
+edit [./items.consts.js](./items.consts.js) `url`s and `wantedItems` to match the exact product names  
 `npm run start`
 
 ## Test

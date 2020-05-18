@@ -51,6 +51,7 @@ const getRougeStock = (html, wantedItems) => {
 
 
 const checkRouge = () => {
+    console.log(new Date());
     rouge.forEach(({url, wantedItems, image}) => {
         axios
             .get(url)
@@ -84,7 +85,7 @@ const checkRouge = () => {
 
 const app = () => {
   console.log(figlet.textSync("Rouge", { font: "isometric3" }));
-  checkRouge()
+  setInterval(checkRouge, 60000);
 }
 
 app();

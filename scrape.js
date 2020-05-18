@@ -1,40 +1,10 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const figlet = require("figlet");
 const notifier = require("node-notifier");
 
 require("colors")
 
-const rouge = [
-  {
-    url: "https://www.roguefitness.com/rogue-calibrated-lb-steel-plates",
-    image: "calibrated.jpg", // used for notification
-    wantedItems: [
-      // "0.25LB Calibrated Plate - Pair", // used for testing
-      // "1LB Calibrated Plate - Pair", // used for testing
-      // "10LB Calibrated Plate - Pair", // used for testing
-      "35LB Calibrated Plate - Pair",
-      "45LB Calibrated Plate - Pair",
-      "55LB Calibrated Plate - Pair",
-    ],
-  },
-  {
-    url: "https://www.roguefitness.com/rogue-6-shooter-olympic-plates",
-    image: "6-shooter.jpg",
-    wantedItems: [
-      "35LB 6-Shooter Olympic Grip Plates - Pair",
-      "45LB 6-Shooter Olympic Grip Plates - Pair",
-    ],
-  },
-  {
-    url: "https://www.roguefitness.com/rogue-machined-olympic-plates",
-    image: "machined.jpg",
-    wantedItems: [
-      "35LB Machined Olympic Plate - Pair",
-      "45LB Machined Olympic Plate - Pair",
-    ],
-  },
-];
+const items = require('./items.consts');
 
 const getRougeStock = (html, wantedItems) => {
   const $ = cheerio.load(html);
@@ -52,7 +22,7 @@ const getRougeStock = (html, wantedItems) => {
 
 const checkRouge = () => {
     console.log(new Date());
-    rouge.forEach(({url, wantedItems, image}) => {
+    items.forEach(({url, wantedItems, image}) => {
         axios
             .get(url)
             .then(res => {
@@ -83,9 +53,7 @@ const checkRouge = () => {
     })
 }
 
-const app = () => {
-  console.log(figlet.textSync("Rouge", { font: "isometric3" }));
-  setInterval(checkRouge, 60000);
-}
-
-app();
+module.exports = {
+  checkRouge,
+  getRougeStock,
+};

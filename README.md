@@ -4,5 +4,8 @@
 `npm i`
 
 ## Usage
-edit `./scrape.js` `url`s and `wantedItems`
+edit `./items.consts.js` `url`s and `wantedItems` to match the exact product names
 `npm run start`
+
+## Test
+`npm run test`

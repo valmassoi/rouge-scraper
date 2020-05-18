@@ -8,12 +8,17 @@ const items = require('./items.consts');
 
 const getRougeStock = (html, wantedItems) => {
   const $ = cheerio.load(html);
+  const foundProducts = $(".grouped-item-row");
+  if (!foundProducts || foundProducts.length === 0) {
+    console.error("Error: Couldn't find any products parsing html");
+  }
+  
   const instockItems = [];
-  $(".grouped-item-row").each((i, elem) => {
+  foundProducts.each((i, elem) => {
     const itemName = $(elem).find(".item-name").text();
     const hasQtyInput = $(elem).has(".input-text").length;
     if (wantedItems.includes(itemName) && hasQtyInput) {
-      instockItems.push(itemName)
+      instockItems.push(itemName);
     }
   });
   return instockItems

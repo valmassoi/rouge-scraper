@@ -39,7 +39,7 @@ const checkRouge = () => {
                     contentImage: `./images/${image}`,
                     open: url,
                     timeout: 1000000,
-                    // sound: "ding.mp3",
+                    sound: true,
                   });
                 } else {
                   const pathPieces = url.split('/')

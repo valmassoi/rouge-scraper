@@ -29,24 +29,24 @@ module.exports = [
     ],
   },
   // kettle
-  {
-    url: "https://www.roguefitness.com/rogue-kettlebells",
-    image: "kettlebell.jpg",
-    wantedItems: ["18LB Rogue Kettlebell", "26LB Rogue Kettlebell"],
-  },
-  {
-    url: "https://www.roguefitness.com/ader-kettlebells",
-    image: "kettlebell.jpg",
-    wantedItems: ["18LB Premier Kettlebell", "26LB Premier Kettlebell"],
-  },
-  {
-    url: "https://www.roguefitness.com/ader-lb-premier-kettlebells",
-    image: "kettlebell.jpg",
-    wantedItems: ["20 LB Premier Kettlebell", "25 LB Premier Kettlebell"],
-  },
-  {
-    url: "https://www.roguefitness.com/gmg-kettlebells",
-    image: "kettlebell.jpg",
-    wantedItems: ["12KG GMG Kettlebell"],
-  },
+  // {
+  //   url: "https://www.roguefitness.com/rogue-kettlebells",
+  //   image: "kettlebell.jpg",
+  //   wantedItems: ["18LB Rogue Kettlebell", "26LB Rogue Kettlebell"],
+  // },
+  // {
+  //   url: "https://www.roguefitness.com/ader-kettlebells",
+  //   image: "kettlebell.jpg",
+  //   wantedItems: ["18LB Premier Kettlebell", "26LB Premier Kettlebell"],
+  // },
+  // {
+  //   url: "https://www.roguefitness.com/ader-lb-premier-kettlebells",
+  //   image: "kettlebell.jpg",
+  //   wantedItems: ["20 LB Premier Kettlebell", "25 LB Premier Kettlebell"],
+  // },
+  // {
+  //   url: "https://www.roguefitness.com/gmg-kettlebells",
+  //   image: "kettlebell.jpg",
+  //   wantedItems: ["12KG GMG Kettlebell"],
+  // },
 ];

@@ -6,6 +6,36 @@ require("colors")
 
 const items = require('./items.consts');
 
+const notify = (url, instockItems, image) => {
+  const title = "Rouge";
+  const subtitle = "Found Stock!!!";
+  const message = instockItems.join(", ");
+
+  notifier.notify({
+    title,
+    subtitle,
+    message,
+    icon: `./images/rouge.jpeg`,
+    contentImage: `./images/${image}`,
+    open: url,
+    timeout: 1000000,
+    sound: true,
+  });
+
+  const { SLACK_WEBHOOK_URL } = process.env;
+  if (SLACK_WEBHOOK_URL) {
+    axios.post(
+      SLACK_WEBHOOK_URL,
+      { text: `${title}: ${subtitle} ${message}\n\n${url}` },
+      {
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
+  }
+};
+
 const getRougeStock = (html, wantedItems) => {
   const $ = cheerio.load(html);
   const foundProducts = $(".grouped-item-row");
@@ -24,7 +54,6 @@ const getRougeStock = (html, wantedItems) => {
   return instockItems
 };
 
-
 const checkRouge = () => {
     console.log(new Date());
     items.forEach(({url, wantedItems, image}) => {
@@ -36,16 +65,7 @@ const checkRouge = () => {
                   instockItems.forEach(itemName => {
                     console.log(`Stock found for ${itemName}!`.green);
                   })
-                  notifier.notify({
-                    title: "Rouge",
-                    subtitle: "Found Stock!!!",
-                    message: instockItems.join(", "),
-                    icon: `./images/rouge.jpeg`,
-                    contentImage: `./images/${image}`,
-                    open: url,
-                    timeout: 1000000,
-                    sound: true,
-                  });
+                  notify(url, instockItems, image);
                 } else {
                   const pathPieces = url.split('/')
                   const route = pathPieces[pathPieces.length - 1];

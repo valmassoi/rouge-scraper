@@ -6,7 +6,7 @@ require("dotenv").config();
 const { checkRouge } = require("./scrape");
 
 const app = () => {
-  console.log(figlet.textSync("Rouge", { font: "isometric3" }));
+  console.log(figlet.textSync("Rouge", { font: "Isometric3" }));
   const { SLACK_WEBHOOK_URL } = process.env;
   if (SLACK_WEBHOOK_URL) {
     axios.post(

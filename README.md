@@ -1,5 +1,5 @@
 # Rouge scraper
-Web scraper that checks Rogue Fitness stock of 35-55lb plates every minute. Their `Notify Me` button is delayed (I never got an email when they had stock come in), so this gets you to the front of the line for new inventory. Either check console output or wait for an in stock notification (MacOS native and Slack for mobile).
+Web scraper that checks Rogue Fitness stock of 45-55lb plates every minute. Their `Notify Me` button is delayed (I never got an email when they had stock come in), so this gets you to the front of the line for new inventory. Either check console output or wait for an in stock notification (MacOS native and Slack for mobile).
 
 ![Screen Shot of app running in Terminal](./images/ScreenShot.png)
 

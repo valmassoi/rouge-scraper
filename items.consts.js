@@ -20,14 +20,14 @@ module.exports = [
       "45LB 6-Shooter Olympic Grip Plates - Pair",
     ],
   },
-  {
-    url: "https://www.roguefitness.com/rogue-machined-olympic-plates",
-    image: "machined.jpg",
-    wantedItems: [
+  // {
+    // url: "https://www.roguefitness.com/rogue-machined-olympic-plates",
+    // image: "machined.jpg",
+    // wantedItems: [
       // "35LB Machined Olympic Plate - Pair",
-      "45LB Machined Olympic Plate - Pair",
-    ],
-  },
+      // "45LB Machined Olympic Plate - Pair",
+    // ],
+  // },
   // kettle
   // {
   //   url: "https://www.roguefitness.com/rogue-kettlebells",

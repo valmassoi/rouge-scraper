@@ -58,7 +58,7 @@ const checkRouge = () => {
     console.log(new Date());
     items.forEach(({url, wantedItems, image}) => {
         axios
-            .get(url)
+            .get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })
             .then(res => {
                 const instockItems = getRougeStock(res.data, wantedItems);
                 if (instockItems.length) {

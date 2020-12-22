@@ -15,7 +15,7 @@
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "figlet": "^1.4.0",
-    "node-notifier": "^7.0.0"
+    "node-notifier": "^8.0.1"
   },
   "devDependencies": {
     "jest": "^26.0.1"
